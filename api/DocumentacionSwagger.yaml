@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: Empleados API
+  description: Documentación sobre el proyecto de Lucatic Enterprise
+  contact: 
+    name: Lucatic Enterprise
+    url: http://nuestrapagina.com
+  version: 1.0.0
+servers:
+  - url: http://devapi.com
+  - url: http://prodapi.com
+paths:
+  /empleados:
+    description: Recurso para trabajar con los datos de los empleados.
+    get:
+      description: Operacion para recoger todos los datos de los empleados
+      responses:
+        200:
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    age: 
+                      type: integer
+                      example: 32
+                    nombre:
+                      type: string
+                      example: Luis
+                    apellidos: 
+                      type: string
+                      example: Lopez
+                    gender:
+                      type: string
+                      example: male
+                    email: 
+                      type: string
+                      example: algo@gmail.com
+                    phone:
+                      type: string
+                      example: +34 (822) 507-2828
+                    address: 
+                      type: string
+                      example: 161 Ludlam Place, Hatter
+                    registered: 
+                      type: string
+                      example: 2016-05-15T08:08:29 -02:00
+                    latitude: 
+                      type: number
+                      format: double
+                      example: 43.406414
+                    longitude: 
+                      type: number
+                      format: double
+                      example: 63.543606
+                    usuario:
+                      type: string
+                      example: user100
+                    password: 
+                      type: string
+                      example: user100
