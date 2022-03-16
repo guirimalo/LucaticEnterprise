@@ -20,9 +20,13 @@ let data = JSON.parse(rawdata);
   //res.send("../web/home.html");
 //});
 
+function getAllEmpleados() {
+  return data;
+}
+
 app.get('/empleados', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.send(data);
+  res.send(getAllEmpleados());
 });
 
 app.listen(8080);
