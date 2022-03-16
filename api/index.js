@@ -10,10 +10,23 @@ app.set("views", __dirname + "/views");
 
 app.use(express.static(__dirname + "/public"));
 
+// Leer fichero
+const fs = require('fs');
 
-// Aquí detallar rutas
+let rawdata = fs.readFileSync('./empleados.json');
+let data = JSON.parse(rawdata);
 
-// Iniciar servidor
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+//app.get('/', function(req, res) {
+  //res.send("../web/home.html");
+//});
+
+function getAllEmpleados() {
+  return data;
+}
+
+app.get('/empleados', function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(getAllEmpleados());
 });
+
+app.listen(8080);
