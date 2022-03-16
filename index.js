@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/public"));
 // Leer fichero
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('./empleados.json');
+let rawdata = fs.readFileSync('empleados.json');
 let data = JSON.parse(rawdata);
 
 //app.get('/', function(req, res) {
