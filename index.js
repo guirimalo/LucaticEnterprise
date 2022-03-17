@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+var distDir = __dirname + "/web/";
+ app.use(express.static(distDir));
+
 // Motor de plantilla
 const hbs = require('hbs');
 hbs.registerPartials(__dirname + '/views/partials', function (err) {});
