@@ -36,7 +36,7 @@ app.get('/service', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  res.render('./web/home');
+  res.render('home');
 
 });
 
