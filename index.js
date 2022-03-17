@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+var distDir = __dirname + "/web/";
+ app.use(express.static(distDir));
+
 // Motor de plantilla
 const hbs = require('hbs');
 hbs.registerPartials(__dirname + '/views/partials', function (err) {});
@@ -56,6 +59,7 @@ app.get('/empleados', function(req, res) {
   res.send(getAllEmpleados());
 });
 
+
 app.get("/empleados/:id", (req, res) => {
   const { id } = req.params;
   let dato = getEmpleado(id);
@@ -73,7 +77,6 @@ app.get("/empleados/:id", (req, res) => {
     });
   }
 })
-
 //app.listen(8080);
 app.listen(port);
 
