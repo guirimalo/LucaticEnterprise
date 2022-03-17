@@ -64,7 +64,35 @@ describe('Comprobaciones de ejemplos de datos JSON', () => {
         expect(funciones.getEmpleado(22)['edad']).toBe(38);
     });
 
-    test('edad empleado 210 es nula', () => {
+    test('empleado 210 es nulo', () => {
         expect(funciones.getEmpleado(210)).toBeNull();
+    });
+
+    test('empleado -5 es nulo', () => {
+        expect(funciones.getEmpleado(-5)).toBeNull();
+    });
+
+    test('empleado 0 es nulo', () => {
+        expect(funciones.getEmpleado(0)).toBeNull();
+    });
+
+    test('empleado 101 es nulo', () => {
+        expect(funciones.getEmpleado(101)).toBeNull();
+    });
+
+    test('empleado 100 no es nulo', () => {
+        expect(funciones.getEmpleado(100)).not.toBeNull();
+    });
+
+    test('empleado 1 no es nulo', () => {
+        expect(funciones.getEmpleado(1)).not.toBeNull();
+    });
+
+    test('empleado 50 no es nulo', () => {
+        expect(funciones.getEmpleado(50)).not.toBeNull();
+    });
+
+    test('empleado 77 no es nulo', () => {
+        expect(funciones.getEmpleado(77)).not.toBeNull();
     });
   });
