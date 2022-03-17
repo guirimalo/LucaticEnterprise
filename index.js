@@ -51,6 +51,8 @@ app.get('/empleados', function(req, res) {
   res.send(getAllEmpleados());
 });
 
+app.use('/', require('./web/home.html'));
+
 //app.listen(8080);
 app.listen(port);
 
