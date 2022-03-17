@@ -68,4 +68,15 @@ Feature: Montar web sencilla
 		| contacto |
 		| equipo|
    
+   Scenario: Mostrar página Equipo
+		Given: El usuario está en <pagina>
+		When: el usuario acceda a url /equipo
+		Then: al usuario se le muestra la información dicha página
+		| pagina   |
+    | home |
+   	| servicios |
+		| contacto |
+		| equipo|
+   
+   
 
