@@ -24,6 +24,27 @@ function getAllEmpleados() {
   return data;
 }
 
+app.get('/equipo', function(req, res) {
+  res.render('equipo');
+
+  
+});
+app.get('/service', function(req, res) {
+  res.render('service');
+
+});
+
+app.get('/', function(req, res) {
+  res.render('home');
+
+});
+
+app.get('/contacto', function(req, res) {
+  res.render('contacto');
+
+});
+
+
 app.get('/empleados', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.send(getAllEmpleados());
