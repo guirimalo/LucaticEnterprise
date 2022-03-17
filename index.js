@@ -28,6 +28,11 @@ function getAllEmpleados() {
   return data;
 }
 
+function getEmpleado(id) {
+  let dato = getAllEmpleados().find(empleado => empleado.id === parseInt(id));
+  return dato;
+}
+
 app.get('/equipo', function(req, res) {
   res.render('equipo');
 
@@ -55,7 +60,24 @@ app.get('/empleados', function(req, res) {
 });
 
 
+app.get("/empleados/:id", (req, res) => {
+  const { id } = req.params;
+  let dato = getEmpleado(id);
+  if (dato) {
+    return res.json({
+        msg: "Usuario filtrado por id",
+        body: `Datos: ${dato}`,
+        data: dato
+    });
+  } else {
+    return res.json({
+        msg: "Usuario filtrado por id",
+        body: `No existe id empleado 1-100 es el rango.`,
+        data: dato
+    });
+  }
+})
 //app.listen(8080);
 app.listen(port);
 
-module.exports = getAllEmpleados;
+module.exports = getAllEmpleados, getEmpleado;
