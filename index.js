@@ -36,7 +36,7 @@ app.get('/service', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  res.render('home');
+  res.render('./web/home');
 
 });
 
@@ -51,7 +51,6 @@ app.get('/empleados', function(req, res) {
   res.send(getAllEmpleados());
 });
 
-app.use('/contacto', require('./web/contact.html'));
 
 //app.listen(8080);
 app.listen(port);
