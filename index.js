@@ -16,20 +16,17 @@ app.use(express.static(__dirname + "/public"));
 // Leer fichero
 const fs = require('fs');
 
-
-//app.get('/', function(req, res) {
-  //res.send("../web/home.html");
-//});
-
-function getAllEmpleados() {
-  
+function getAllEmpleados() {  
   let rawdata = fs.readFileSync('./empleados.json');
   let data = JSON.parse(rawdata);
   return data;
 }
 
 function getEmpleado(id) {
-  let dato = getAllEmpleados().find(empleado => empleado.id === parseInt(id));
+  let dato = null;
+  if(Number(id) >= Number(1) && Number(id) <= Number(100)) {
+    dato = getAllEmpleados().find(empleado => empleado.id === parseInt(id));
+  }
   return dato;
 }
 
@@ -63,21 +60,17 @@ app.get('/empleados', function(req, res) {
 app.get("/empleados/:id", (req, res) => {
   const { id } = req.params;
   let dato = getEmpleado(id);
-  if (dato) {
+  if (dato != null) {
     return res.json({
-        msg: "Usuario filtrado por id",
+        msg: "Empleado:",
         body: `Datos: ${dato}`,
         data: dato
     });
   } else {
-    return res.json({
-        msg: "Usuario filtrado por id",
-        body: `No existe id empleado 1-100 es el rango.`,
-        data: dato
-    });
+    return res.status(404).json({body: `Empleado no encontrado dentro del rango 1-100`}).end();
   }
 })
 //app.listen(8080);
 app.listen(port);
 
-module.exports = getAllEmpleados, getEmpleado;
+module.exports = {getAllEmpleados, getEmpleado};
