@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "c3594845-c3a9-4463-9541-36bb913d1803",
+		"name": "ConsultaGetEmpleadosHeroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/99 (200 y empleado 99 existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuleve codigo 200. El empleado 99 existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/99",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/99 (200, empleado 99 datos correctos )",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuelve codigo 200. El empleado 99 existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Dato: ID correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"99\");\r",
+							"});\r",
+							"pm.test(\"Dato: Edad correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"29\");\r",
+							"});\r",
+							"pm.test(\"Dato: Nombre correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Rosalinda\");\r",
+							"});\r",
+							"pm.test(\"Dato: Apellido correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Patrick\");\r",
+							"});\r",
+							"pm.test(\"Dato: Genero correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"female\");\r",
+							"});\r",
+							"pm.test(\"Dato: Mail correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"rosalindapatrick@electonic.com\");\r",
+							"});\r",
+							"pm.test(\"Dato: Telefono correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"+34 (940) 542-3556\");\r",
+							"});\r",
+							"pm.test(\"Dato: Direccion correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"164 Harrison Avenue, Hoehne, Louisiana, 9619\");\r",
+							"});\r",
+							"pm.test(\"Dato: Registered correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"2018-04-21T04:52:10 -02:00\");\r",
+							"});\r",
+							"pm.test(\"Dato: Latitud Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"5.876311\");\r",
+							"});\r",
+							"pm.test(\"Dato: Longitud Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"18.40358\");\r",
+							"});\r",
+							"pm.test(\"Dato: Usuario Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"user15\");\r",
+							"});\r",
+							"pm.test(\"Dato: Password Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"17973904\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/99",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get /empleados/100 (200 y empleado 100 existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuelve codigo 200. El empleado 100 existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/100",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get /empleados/100 (200, empleado 100 datos correctos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuelve codigo 200. El empleado 100 existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Dato: ID correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"100\");\r",
+							"});\r",
+							"pm.test(\"Dato: Edad correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"34\");\r",
+							"});\r",
+							"pm.test(\"Dato: Nombre correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Young\");\r",
+							"});\r",
+							"pm.test(\"Dato: Apellido correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Thomas\");\r",
+							"});\r",
+							"pm.test(\"Dato: Genero correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"male\");\r",
+							"});\r",
+							"pm.test(\"Dato: Mail correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"youngthomas@electonic.com\");\r",
+							"});\r",
+							"pm.test(\"Dato: Telefono correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"+34 (827) 559-2905\");\r",
+							"});\r",
+							"pm.test(\"Dato: Direccion correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"395 Verona Street, Abrams, Colorado, 3313\");\r",
+							"});\r",
+							"pm.test(\"Dato: Registered correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"2021-12-10T10:04:46 -01:00\");\r",
+							"});\r",
+							"pm.test(\"Dato: Latitud Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"-60.589478\");\r",
+							"});\r",
+							"pm.test(\"Dato: Longitud Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"55.045063\");\r",
+							"});\r",
+							"pm.test(\"Dato: Usuario Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"user1\");\r",
+							"});\r",
+							"pm.test(\"Dato: Password Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"90963404\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/100",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/101 (404, empleado 101 no existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuleve codigo 404. El empleado 101 no existe\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/101",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/55 (200, empleado 55 existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuleve codigo 200. El empleado 55 existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/55",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/55 (200, empleado 55 datos correctos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Devuleve codigo 200. El empleado 55 existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Dato: ID correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"55\");\r",
+							"});\r",
+							"pm.test(\"Dato: Edad correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"32\");\r",
+							"});\r",
+							"pm.test(\"Dato: Nombre correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Christy\");\r",
+							"});\r",
+							"pm.test(\"Dato: Apellido correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Joyner\");\r",
+							"});\r",
+							"pm.test(\"Dato: Genero correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"female\");\r",
+							"});\r",
+							"pm.test(\"Dato: Mail correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"christyjoyner@electonic.com\");\r",
+							"});\r",
+							"pm.test(\"Dato: Telefono correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"+34 (839) 436-2565\");\r",
+							"});\r",
+							"pm.test(\"Dato: Direccion correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"269 Willow Street, Advance, Iowa, 4164\");\r",
+							"});\r",
+							"pm.test(\"Dato: Registered correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"2015-12-19T06:41:16 -01:00\");\r",
+							"});\r",
+							"pm.test(\"Dato: Latitud Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"1.37436\");\r",
+							"});\r",
+							"pm.test(\"Dato: Longitud Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"-112.851324\");\r",
+							"});\r",
+							"pm.test(\"Dato: Usuario Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"user97\");\r",
+							"});\r",
+							"pm.test(\"Dato: Password Correcto\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"20887545\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/55",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/99 (Fallo 404 porque el empleado 99 existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Falla al devolver el codigo 404, ya que el empleado existe\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/99",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/100 (Fallo 404 porque el empleado 100 existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Falla al devolver el codigo 404, ya que el empleado 100 existe\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/100",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/101 (Fallo 200 porque el empleado 101 no existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Falla al devolver el codigo 200, ya que el empleado 101 no existe\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/101",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados/55(Fallo 404 porque el empleado 55 existe)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Falla al devolver el codigo 404, ya que el empleado 55 existe\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados/55",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados",
+						"55"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
