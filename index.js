@@ -77,6 +77,24 @@ app.get("/empleados/:id", (req, res) => {
     });
   }
 })
+let clientes = []; 
+
+app.post('/api/clientes/add', (req, res, next) => {
+  const cliente = req.body;
+  if(!cliente) {
+    return res.status(400).json({error: 'No hay datos'});
+  }
+  cliente.no = clientes.length + 1;
+  console.log(cliente);
+  clientes.push(cliente);
+
+  return res.status(200).json(clientes);
+});
+
+
+app.all('/', (req, res, next) => {
+  return res.status(200).json({message: 'Servidor listo'})
+});
 //app.listen(8080);
 app.listen(port);
 
