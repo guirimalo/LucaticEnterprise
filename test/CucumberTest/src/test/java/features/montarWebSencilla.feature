@@ -1,46 +1,46 @@
 Feature: Montar web sencilla
 
   Scenario: Mostrar pagina home
-    Given: El usuario esta en <pagina>
-    When: el usuario acceda a url /home
-    Then: al usuario se le muestra la informaci�n dicha p�gina
+    Given El usuario esta en <pagina>
+    When el usuario acceda a url /home
+    Then al usuario se le muestra la informaci�n dicha p�gina
     | pagina   |
     | home |
     | servicios |
 
 
   Scenario: Acceder a la web desde navegador
-     	Given: El usuario esta en otra pagina externa
-     	When: el usuario pone la <url> en el navegador
-     	Then: al usuario se le muestra la pagina
+     	Given El usuario esta en otra pagina externa
+     	When el usuario pone la <url> en el navegador
+     	Then al usuario se le muestra la pagina
      	| url   |
       | home |
       | servicios |
 
 
   Scenario: Acceder a la web en mantenimiento desde navegador
-    Given: El usuario esta en  otra pagina externa
-    When: el usuario pone la <url> en el navegador
-    And: la pagina esta en mantenimiento
-    Then: al usuario se le muestra que la pagina esta en mantenimiento
+    Given El usuario esta en  otra pagina externa
+    When el usuario pone la <url> en el navegador
+    And la pagina esta en mantenimiento
+    Then al usuario se le muestra que la pagina esta en mantenimiento
     | url   |
     | home |
     | servicios |
 
 
   Scenario: Mostrar pagina productos/servicios
-    Given: El usuario esta en <pagina>
-    When: el usuario acceda a url /servicios
-    Then: al usuario se le muestra la informacian dicha pagina
+    Given El usuario esta en <pagina>
+    When el usuario acceda a url /servicios
+    Then al usuario se le muestra la informacian dicha pagina
     | pagina   |
     | home |
     | servicios |
     
     
    Scenario: Mostrar pagina Contacto
-		Given: El usuario esta en <pagina>
-		When: el usuario acceda a url /contacto
-		Then: al usuario se le muestra la informacian dicha pagina
+		Given El usuario esta en <pagina>
+		When el usuario acceda a url /contacto
+		Then al usuario se le muestra la informacian dicha pagina
 		| pagina   |
     | home |
    	| servicios |
@@ -48,9 +48,9 @@ Feature: Montar web sencilla
 		| equipo|
 		
 	Scenario: Acceder a la web desde navegador
-   	Given: El usuario esta en otra pagina externa
-   	When: el usuario pone la <url> en el navegador
-   	Then: al usuario se le muestra la pagina
+   	Given El usuario esta en otra pagina externa
+   	When el usuario pone la <url> en el navegador
+   	Then al usuario se le muestra la pagina
    	| url   |
     | home |
     | servicios |
@@ -58,10 +58,10 @@ Feature: Montar web sencilla
 		| equipo|
 	
    Scenario: Acceder a la web en mantenimiento desde navegador
-   	Given: El usuario esta en  otra pagina externa
-   	When: el usuario pone la <url> en el navegador
-		And: la pagina esta en mantenimiento
-   	Then: al usuario se le muestra que la pagina esta en mantenimiento
+   	Given El usuario esta en  otra pagina externa
+   	When el usuario pone la <url> en el navegador
+		And la pagina esta en mantenimiento
+   	Then al usuario se le muestra que la pagina esta en mantenimiento
    	| url   |
     | home |
     | servicios |
@@ -69,9 +69,9 @@ Feature: Montar web sencilla
 		| equipo|
    
    Scenario: Mostrar pagina Equipo
-		Given: El usuario esta en <pagina>
-		When: el usuario acceda a url /equipo
-		Then: al usuario se le muestra la informacian dicha pagina
+		Given El usuario esta en <pagina>
+		When el usuario acceda a url /equipo
+		Then al usuario se le muestra la informacian dicha pagina
 		| pagina   |
     | home |
    	| servicios |
