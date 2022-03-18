@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "b25ca46f-9d90-4d69-adff-e16c3466d34b",
+		"name": "ConsultaAllEmpleados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (Test fail)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code 200 fail\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (Test correct)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (nombre:Hansen Correcto)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"nombre:Hansen contains JSON\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hansen\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (nombre:Pepe Fail)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"nombre:Pepe not contains JSON\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Pepe\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/empleados",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

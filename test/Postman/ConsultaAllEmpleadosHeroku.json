@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "c78bee49-539f-4c0a-9682-5b20276bc08d",
+		"name": "ConsultaAllEmpleadosHeroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (Test fail)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code 200 fail\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (Test correct)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (nombre:Hansen Correcto)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"nombre:Hansen contains JSON\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hansen\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /empleados (nombre:Pepe Fail)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"nombre:Pepe not contains JSON\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Pepe\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lucaticenterprise.herokuapp.com/empleados",
+					"protocol": "https",
+					"host": [
+						"lucaticenterprise",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"empleados"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
