@@ -60,18 +60,6 @@ paths:
                     password: 
                       type: string
                       example: user100
-openapi: 3.0.0
-info:
-  title: Empleados  ID API
-  description: Documentación sobre el proyecto de Lucatic Enterprise
-  contact: 
-    name: Lucatic Enterprise
-    url: http://nuestrapagina.com
-  version: 1.0.0
-servers:
-  - url: http://devapi.com
-  - url: http://prodapi.com
-paths:
   /empleados/{id}:
     get:
       tags:
@@ -83,7 +71,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: Uuser ID
+          description: User ID
           required: true
           schema:
             type: integer
