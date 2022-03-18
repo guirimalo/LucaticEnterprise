@@ -69,7 +69,7 @@ paths:
         Se quiere filtrar usuarios por id
       operationId: getUserById
       parameters:
-        - name: id
+        - name: name
           in: path
           description: User ID
           required: true
