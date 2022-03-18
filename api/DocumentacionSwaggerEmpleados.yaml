@@ -60,3 +60,65 @@ paths:
                     password: 
                       type: string
                       example: user100
+  /empleados/{id}:
+    get:
+      tags:
+        - Empleados
+      summary: Get empleados por id
+      description: >
+        Se quiere filtrar usuarios por id
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    age: 
+                      type: integer
+                      example: 32
+                    nombre:
+                      type: string
+                      example: Luis
+                    apellidos: 
+                      type: string
+                      example: Lopez
+                    gender:
+                      type: string
+                      example: male
+                    email: 
+                      type: string
+                      example: algo@gmail.com
+                    phone:
+                      type: string
+                      example: +34 (822) 507-2828
+                    address: 
+                      type: string
+                      example: 161 Ludlam Place, Hatter
+                    registered: 
+                      type: string
+                      example: 2016-05-15T08:08:29 -02:00
+                    latitude: 
+                      type: number
+                      format: double
+                      example: 43.406414
+                    longitude: 
+                      type: number
+                      format: double
+                      example: 63.543606
+                    usuario:
+                      type: string
+                      example: user100
+                    password: 
+                      type: string
+                      example: user100
