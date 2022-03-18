@@ -91,6 +91,7 @@ app.post('/api/clientes/add', (req, res, next) => {
   return res.status(200).json(clientes);
 });
 
+
 app.all('/', (req, res, next) => {
   return res.status(200).json({message: 'Servidor listo'})
 });
