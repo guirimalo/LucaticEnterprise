@@ -122,3 +122,28 @@ paths:
                     password: 
                       type: string
                       example: user100
+/formulario:
+    post:
+      operationId: formulario
+      requestBody:
+        required:true
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            type: object
+            properties:
+              name:          # <!--- form field name
+                type: string
+              email:    # <!--- form field name
+                type: string
+              teléfono:
+                type: integer
+              mensaje:
+                type: string
+              edad:
+                type: boolean
+              privacidad:
+                type: boolean
+      responses:
+        '200':
+          description: OK
