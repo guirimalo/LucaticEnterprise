@@ -70,6 +70,12 @@ app.get("/empleados/:id", (req, res) => {
     return res.status(404).json({body: `Empleado no encontrado dentro del rango 1-100`}).end();
   }
 })
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static('static'));
+
+// depósito de datos temporal
+
 let clientes = []; 
 
 app.post('/api/clientes/add', (req, res, next) => {
@@ -80,7 +86,7 @@ app.post('/api/clientes/add', (req, res, next) => {
   cliente.no = clientes.length + 1;
   console.log(cliente);
   clientes.push(cliente);
-
+ 
   return res.status(200).json(clientes);
 });
 
@@ -88,6 +94,7 @@ app.post('/api/clientes/add', (req, res, next) => {
 app.all('/', (req, res, next) => {
   return res.status(200).json({message: 'Servidor listo'})
 });
+
 //app.listen(8080);
 app.listen(port);
 
